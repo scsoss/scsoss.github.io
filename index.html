@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCSOSS, DU</title>
+  <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon"/>
+
+  <link rel="icon" type="image/png" sizes="66x41" href="media/logo1.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="66x41" href="media/logo1.png">
+  <meta content='#8a10af' name='theme-color'/>
+  <meta name="copyright" content="scsoss_du">
+  <meta name="author" content="scsoss_du">
+  <meta content='Bangladesh' name='geo.placename'/>
+  <meta content='880' name='geo.country'/>
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="scsoss_du">
+  <meta name="apple-mobile-web-app-title" content="scsoss_du">
+  <meta name="msapplication-navbutton-color" content="#8a10af">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="/">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- Bulma Version 0.6.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" integrity="sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw=" crossorigin="anonymous" />
+  <style type="text/css">
+    html,body {
+      font-family: 'Open Sans';
+      background-image: url('media/background.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .footer-element{
+        font-family: monospace;
+        font-size: 8px;
+    }
+    .hero-head{
+        background:  rgba(240, 255, 240, 0.5);
+    }
+    .hero-head:hover{
+        background: rgba(233, 245, 233, 0.8);
+    }
+    .nav-logo{
+     zoom: 200%;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-fullheight is-default is-bold">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../">
+            <img class="nav-logo" src="media/logo.png" alt="Logo">
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active" href="index.html">
+              Home
+            </a>
+            <a class="navbar-item">
+              Examples
+            </a>
+            <a class="navbar-item" href="info.html">
+              Information
+            </a>
+            <a class="navbar-item" href="admin.html">
+              Admin
+            </a>
+            <a class="navbar-item" href="login.html">
+              login
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <figure class="image is-4by3">
+              <img src="media/source.gif" alt="Description"><!-- https://i.pinimg.com/originals/ac/06/69/ac0669ca63398818b6361b124fb86737.gif -->
+            </figure>
+          </div>
+          <div class="column is-6 is-offset-1">
+            <img src="media/logo/96x96.png">
+            <h1 class="title is-2">
+              SCSOSS, DU
+            </h1>
+            <h2 class="subtitle is-4">
+                Sri Chaitanya Shiksha O Sangskriti Sangha, University of Dhaka
+            </h2>
+            <br>
+            <p class="has-text-centered">
+              <a class="button is-medium is-info is-outlined">
+                Learn more
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio src="media/kirtan.mp3" autoplay>
+        <p>Your browser does not support the audio element.</p>
+        <embed src="media/kirtan.mp3" width="180" height="90" hidden="true" />
+        </audio>
+
+    <div class="hero-foot">
+      <div class="container">
+        <div class="tabs is-centered">
+          <ul>
+            <li><a id="footer-element">Developed By: @pranta_Saha | @bijoy_nag | @asim_roy </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script async type="text/javascript" src="js/bulma.js"></script>
+  <script>
+      window.addEventListener('load', function() {
+            var outputElement = document.getElementById('output');
+        
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+        .then(function(reg) {
+          console.log('Registration succeeded.');
+        }).catch(function(error) {
+          console.log('Registration failed with ' + error);
+        });
+      }
+        //alert message for add to homescreen
+      window.addEventListener('beforeinstallprompt', function(e) {
+              outputElement.textContent = 'beforeinstallprompt Event fired';
+              
+              // e.userChoice will return a Promise.
+              e.userChoice.then(function(choiceResult) {
+                
+                console.log(choiceResult.outcome);
+                
+                if(choiceResult.outcome == 'dismissed') {
+                  console.log('User cancelled homescreen install');
+                }
+                else {
+                  console.log('User added to homescreen');
+                }
+              });
+              
+            });
+            
+          });
+      </script>
+      
+</body>
+</html>

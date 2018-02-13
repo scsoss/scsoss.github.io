@@ -1,0 +1,25 @@
+{
+    "name":"chaitanya-sangha",
+    "version": "1.0.0",
+    "description": "Sri Chaitanya Shiksha O Sangskriti Sangha, University of Dhaka",
+    "main": "app.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/scsoss/scsoss.github.io.git"
+    },
+    "keywords": [
+        "account",
+        "js",
+        "bulma"
+      ],
+      "author": "Pranta Saha",
+      "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/scsoss/scsoss.github.io/issues",
+    },
+    "homepage": "https://scsoss.github.io/index.html",
+    "dependencies": {
+        "bulma": "^0.6.2",
+        "font-awesome": "^4.7.0"
+      }
+}
